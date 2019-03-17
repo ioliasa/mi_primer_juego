@@ -161,6 +161,10 @@ function update ()
     {
         player.anims.play('down', true);
     }
+    else if (Phaser.Input.Keyboard.JustDown(tecla)) {
+        var x = (player.x < 400) ? Phaser.Math.Between(400, 800) : Phaser.Math.Between(0, 400);
+        var copa = copas.create(x,16,'copa');
+    }
     else
     {
         player.setVelocityX(0);
@@ -170,11 +174,7 @@ function update ()
     {
         player.setVelocityY(-330);
     }
-    if (tecla.isDown){
-        var x = (player.x < 400) ? Phaser.Math.Between(400, 800) : Phaser.Math.Between(0, 400);
-        var copa = copas.create(x,16,'copa');
-    }
-
+    
 
     
 }
